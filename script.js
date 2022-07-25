@@ -1,4 +1,34 @@
 //play a five round game of rock paper scissors
+game();
+
+function game(){
+
+    let userScore = 0
+    let computerScore = 0
+    
+    for (let index = 0; index < 5; index++) {
+       
+        let roundResult = playRound();
+
+        if(roundResult == "Computer wins"){
+            console.log("Computer has won!")
+            computerScore++
+        }else if(roundResult == "Player wins"){
+            console.log("Player has won!")
+            userScore++
+        }
+
+        console.log("Player Score: " + userScore + "\nComputer Score: " +
+                    computerScore)
+    }
+
+    if(userScore > computerScore){
+        console.log("Player has won the game!")
+    }else{
+        console.log("Computer has won the game!")
+    }
+}
+
 
 //take the users input(case insensitive)
 function takeUserInput(){
@@ -47,9 +77,19 @@ function takeComputerInput(){
 //play a single round 
 function playRound(computerInput = takeComputerInput(), userInput = takeUserInput()){
 
-    if((computerInput == "rock" && userInput == "rock") || (computerInput == "scissors" && userInput == "scissors") 
-        || (computerInput == "paper" && userInput == "paper")){
+    if(computerInput == userInput){
         return "Tie!"
-    }
+    } 
+    
+    if(computerInput == "rock" && userInput == "scissors" ||
+       computerInput == "scissors" && userInput == "paper" ||
+       computerInput == "paper" && userInput == "rock"){
 
+        return "Computer wins"
+    } else {
+
+        return "Player wins"
+    }
 }
+
+
