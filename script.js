@@ -44,11 +44,12 @@ function takeComputerInput(){
     return result;
 }
 
-for (let index = 0; index < 5; index++) {
-console.log(takeComputerInput())
-    
-}
-
-
 //play a single round 
+function playRound(computerInput = takeComputerInput(), userInput = takeUserInput()){
 
+    if((computerInput == "rock" && userInput == "rock") || (computerInput == "scissors" && userInput == "scissors") 
+        || (computerInput == "paper" && userInput == "paper")){
+        return "Tie!"
+    }
+
+}
