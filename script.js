@@ -10,19 +10,23 @@ function game(){
        
         let roundResult = playRound();
 
-        if(roundResult == "Computer wins"){
-            console.log("Computer has won!")
+        if(roundResult.winner == "Computer"){
+            console.log("Computer has won with " + roundResult.winningMove)
             computerScore++
-        }else if(roundResult == "Player wins"){
-            console.log("Player has won!")
+        }else if(roundResult.winner == "Player"){
+            console.log("Player has won with" + roundResult.winningMove)
             userScore++
+        }else if(roundResult.winner == "Tie"){
+            console.log("Tie achieved with " + roundResult.winningMove)
         }
 
         console.log("Player Score: " + userScore + "\nComputer Score: " +
                     computerScore)
     }
 
-    if(userScore > computerScore){
+    if(userScore == computerScore){
+        console.log("The game has tied!")
+    }else if(userScore > computerScore){
         console.log("Player has won the game!")
     }else{
         console.log("Computer has won the game!")
@@ -78,17 +82,20 @@ function takeComputerInput(){
 function playRound(computerInput = takeComputerInput(), userInput = takeUserInput()){
 
     if(computerInput == userInput){
-        return "Tie!"
+        return {winner: "Tie",
+                winningMove: computerInput}
     } 
     
     if(computerInput == "rock" && userInput == "scissors" ||
        computerInput == "scissors" && userInput == "paper" ||
        computerInput == "paper" && userInput == "rock"){
 
-        return "Computer wins"
+        return {winner: "Computer",
+                winningMove: computerInput}
     } else {
 
-        return "Player wins"
+        return {winner: "Player",
+                winningMove: userInput}
     }
 }
 
