@@ -3,33 +3,33 @@ game();
 
 function game(){
 
-    let userScore = 0
-    let computerScore = 0
+    let userScore = 0;
+    let computerScore = 0;
     
     for (let index = 0; index < 5; index++) {
        
         let roundResult = playRound();
 
         if(roundResult.winner == "Computer"){
-            console.log("Computer has won with " + roundResult.winningMove)
-            computerScore++
+            console.log("Computer has won with " + roundResult.winningMove);
+            computerScore++;
         }else if(roundResult.winner == "Player"){
-            console.log("Player has won with" + roundResult.winningMove)
-            userScore++
+            console.log("Player has won with" + roundResult.winningMove);
+            userScore++;
         }else if(roundResult.winner == "Tie"){
-            console.log("Tie achieved with " + roundResult.winningMove)
+            console.log("Tie achieved with " + roundResult.winningMove);
         }
 
         console.log("Player Score: " + userScore + "\nComputer Score: " +
-                    computerScore)
+                    computerScore);
     }
 
     if(userScore == computerScore){
-        console.log("The game has tied!")
+        console.log("The game has tied!");
     }else if(userScore > computerScore){
-        console.log("Player has won the game!")
+        console.log("Player has won the game!");
     }else{
-        console.log("Computer has won the game!")
+        console.log("Computer has won the game!");
     }
 }
 
@@ -39,7 +39,7 @@ function takeUserInput(){
 
     let userInput = prompt("Do you want to play rock, paper or scissors?").toString().toLowerCase();
     let notVerifiedInput = true;
-    console.log(userInput)
+    console.log(userInput);
 
     while (notVerifiedInput){
 
@@ -57,22 +57,22 @@ function takeUserInput(){
 //generate the computers input (random)
 function takeComputerInput(){
 
-    let randomNumber = Math.floor((Math.random() * 3) + 1)
-    let result
+    let randomNumber = Math.floor((Math.random() * 3) + 1);
+    let result;
 
     switch (randomNumber){
 
         case 1: 
-        result = "rock"
-        break
+        result = "rock";
+        break;
 
         case 2: 
-        result = "paper"
-        break
+        result = "paper";
+        break;
 
         case 3:
-        result = "scissors"
-        break
+        result = "scissors";
+        break;
     }
 
     return result;
@@ -83,7 +83,7 @@ function playRound(computerInput = takeComputerInput(), userInput = takeUserInpu
 
     if(computerInput == userInput){
         return {winner: "Tie",
-                winningMove: computerInput}
+                winningMove: computerInput};
     } 
     
     if(computerInput == "rock" && userInput == "scissors" ||
@@ -91,11 +91,11 @@ function playRound(computerInput = takeComputerInput(), userInput = takeUserInpu
        computerInput == "paper" && userInput == "rock"){
 
         return {winner: "Computer",
-                winningMove: computerInput}
+                winningMove: computerInput};
     } else {
 
         return {winner: "Player",
-                winningMove: userInput}
+                winningMove: userInput};
     }
 }
 
