@@ -1,5 +1,5 @@
 //play a five round game of rock paper scissors
-game();
+//game();
 
 function game(){
 
