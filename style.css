@@ -1,7 +1,18 @@
-body{
-    padding: 0px;
+*{
     margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
+}
+
+body{
     display: flex;
     flex-direction: column;
+}
+
+.header {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    background-color: #c2c8cb;
+    display: flex;
+    justify-content: center;
 }
