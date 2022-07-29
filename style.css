@@ -16,3 +16,21 @@ body{
     display: flex;
     justify-content: center;
 }
+
+.buttons {
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    padding: 2rem 2rem;
+    
+}
+
+.PlayButton {
+    width: 128px;
+    height: 128px;
+    border-style: none;
+    border: black solid 2px;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: #c2c8cb;
+}
