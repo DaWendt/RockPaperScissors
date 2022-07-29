@@ -7,6 +7,7 @@
 body{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .header {
@@ -15,6 +16,7 @@ body{
     background-color: #c2c8cb;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .buttons {
@@ -32,5 +34,38 @@ body{
     border: black solid 2px;
     border-radius: 0.5rem;
     padding: 1rem;
-    background-color: #c2c8cb;
+    background-color: #2C3133;
+}
+
+.gameInformation{
+    display: flex;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    gap: 2rem;
+}
+
+.score{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.scoreBoard{
+    display: flex;
+}
+
+.gameFeed{
+    min-height: 8rem;
+    display: flex;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.reset{
+    width: 5rem;
+    height: 2rem;
+    border-style: none;
+    border-radius: 0.3rem;
+    background-color: #2b96c1;
+    font-family: "Poppins", sans-serif;
 }
