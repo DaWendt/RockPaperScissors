@@ -66,47 +66,26 @@ function update(roundResult){
 
         playerScore.textContent = Number(playerScore.textContent) + 1;
 
-        let gameFeedEntry = document.createElement('p');
-        gameFeedEntry.textContent = "Player wins with " + roundResult.winningMove;
-
-        gamefeed.appendChild(gameFeedEntry);
-        gamefeed.scrollTo(0, gamefeed.scrollHeight);
+        createGameFeedMessage("Player wins with " + roundResult.winningMove);
 
     } else if(roundResult.winner == "Computer"){
         computerScore.textContent = Number(computerScore.textContent) + 1;
 
-        let gameFeedEntry = document.createElement('p');
-        gameFeedEntry.textContent = "Computer wins with " + roundResult.winningMove;
-
-        gamefeed.appendChild(gameFeedEntry);
-        gamefeed.scrollTo(0, gamefeed.scrollHeight);
+        createGameFeedMessage("Computer wins with " + roundResult.winningMove);
 
     } else{
 
-        let gameFeedEntry = document.createElement('p');
-        gameFeedEntry.textContent = "Tie achieved with: " + roundResult.winningMove;
-
-        gamefeed.appendChild(gameFeedEntry);
-        gamefeed.scrollTo(0, gamefeed.scrollHeight);
+        createGameFeedMessage("Tie achieved with " + roundResult.winningMove);
 
     }
 
     if(Number(playerScore.textContent) == 5){
 
-        let gameFeedEntry = document.createElement('p');
-        gameFeedEntry.textContent = "Player wins!";
-
-        gamefeed.appendChild(gameFeedEntry);
-        gamefeed.scrollTo(0, gamefeed.scrollHeight);
-
+        createGameFeedMessage("Player wins!");
 
     }else if(Number(computerScore.textContent) == 5){
 
-        let gameFeedEntry = document.createElement('p');
-        gameFeedEntry.textContent = "Computer wins!";
-
-        gamefeed.appendChild(gameFeedEntry);
-        gamefeed.scrollTo(0, gamefeed.scrollHeight);
+        createGameFeedMessage("Computer wins!");
 
     }
 
