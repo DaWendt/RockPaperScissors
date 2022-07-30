@@ -6,13 +6,14 @@ console.log(buttons);
 buttons.forEach((button) => {
 
     button.addEventListener("click", (e) => {
-        console.log(e);
+       console.log(e.currentTarget)
     });
 
 });
 
 //let the game run until either the player or the computer has 5 wins
 //as soon as a button is fired, let the computer generate a corresponding move
+
 //evaluate a winner
 //update the score 
 //write a message to the gamefeed
