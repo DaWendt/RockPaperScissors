@@ -19,6 +19,12 @@ buttons.forEach((button) => {
     });
 });
 
+let resetButton = document.querySelector('.reset');
+resetButton.addEventListener('click', () => {
+
+    resetGame();
+});
+
 //as soon as a button is fired, let the computer generate a corresponding move
 function playRound(userInput, computerInput = generateComputerInput()){
 //evaluate a winner
@@ -100,6 +106,9 @@ function createGameFeedMessage(message){
     gamefeed.scrollTo(0, gamefeed.scrollHeight);
 }
 
+function resetGame(){
+
+}
 
 
 //TODO: as soon as a victory emerges, take out the eventlisteners
