@@ -2,7 +2,7 @@
 let buttons = document.querySelectorAll(".PlayButton");
 buttons.forEach((button) => {
 
-    button.addEventListener("click", buildEventListeners);
+    button.addEventListener("click", buildHandlingLogic);
 });
 
 let resetButton = document.querySelector('.reset');
@@ -74,10 +74,12 @@ function update(roundResult){
     if(Number(playerScore.textContent) == 5){
 
         createGameFeedMessage("Player wins! To play a new game please reset");
+        takeEventListenersOut();
 
     }else if(Number(computerScore.textContent) == 5){
 
         createGameFeedMessage("Computer wins! To play a new game please reset");
+        takeEventListenersOut();
     }
 
 }
@@ -106,13 +108,14 @@ function resetGame(){
 
 function takeEventListenersOut(){
 
-    let buttons = querySelector.querySelectorAll('.PlayButton');
+    let buttons = document.querySelectorAll('.PlayButton');
+    console.log(buttons);
     buttons.forEach((button) => {
-        button.removeEventListener('click', );
+        button.removeEventListener('click', buildHandlingLogic);
     })
 }
 
-function buildEventListeners(e){
+function buildHandlingLogic(e){
     let clickedButton = e.currentTarget;
        switch (clickedButton.id) {
         case "Rock":
