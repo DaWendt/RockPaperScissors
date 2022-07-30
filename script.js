@@ -7,13 +7,13 @@ buttons.forEach((button) => {
        let clickedButton = e.currentTarget;
        switch (clickedButton.id) {
         case "Rock":
-            playRound("Rock")
+            update(playRound("Rock"));
             break;
         case "Paper":
-            playRound("Paper")
+            update(playRound("Paper"));
             break;
         case "Scissors":
-            playRound("Scissors")
+            update(playRound("Scissors"));
             break;
        }
     });
@@ -54,6 +54,29 @@ function generateComputerInput(){
             return "Scissors"
             break;
     }
+}
+
+function update(roundResult){
+
+    let gamefeed = document.querySelector('.gameFeed');
+    let playerScore = document.querySelector('.player');
+    let computerScore = document.querySelector('.computer');
+
+    if(roundResult.winner == "Player"){
+
+        playerScore.textContent = Number(playerScore.textContent) + 1;
+
+        let gameFeedEntry = document.createElement('p');
+        gameFeedEntry.textContent = "Player wins with " + roundResult.winningMove;
+
+        gamefeed.appendChild(gameFeedEntry);
+        
+    } else if(roundResult.winner == "Computer"){
+        computerScore.textContent = Number(computerScore.textContent) + 1;
+    } else{
+
+    }
+
 }
 
 
