@@ -69,6 +69,7 @@ function update(roundResult){
         createGameFeedMessage("Player wins with " + roundResult.winningMove);
 
     } else if(roundResult.winner == "Computer"){
+
         computerScore.textContent = Number(computerScore.textContent) + 1;
 
         createGameFeedMessage("Computer wins with " + roundResult.winningMove);
@@ -76,7 +77,6 @@ function update(roundResult){
     } else{
 
         createGameFeedMessage("Tie achieved with " + roundResult.winningMove);
-
     }
 
     if(Number(playerScore.textContent) == 5){
@@ -86,7 +86,6 @@ function update(roundResult){
     }else if(Number(computerScore.textContent) == 5){
 
         createGameFeedMessage("Computer wins!");
-
     }
 
 }
@@ -103,6 +102,5 @@ function createGameFeedMessage(message){
 
 
 
-//TODO: refactor gamefeed update into a function
 //TODO: as soon as a victory emerges, take out the eventlisteners
 //should the reset button be pressed, reset the game
