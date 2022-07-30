@@ -1,21 +1,8 @@
 //set up eventlisteners for all buttons
-let buttons = document.querySelectorAll("button.PlayButton");
+let buttons = document.querySelectorAll(".PlayButton");
 buttons.forEach((button) => {
 
-    button.addEventListener("click", (e) => {
-       let clickedButton = e.currentTarget;
-       switch (clickedButton.id) {
-        case "Rock":
-            update(playRound("Rock"));
-            break;
-        case "Paper":
-            update(playRound("Paper"));
-            break;
-        case "Scissors":
-            update(playRound("Scissors"));
-            break;
-       }
-    });
+    button.addEventListener("click", buildEventListeners);
 });
 
 let resetButton = document.querySelector('.reset');
@@ -115,13 +102,30 @@ function resetGame(){
     entries.forEach((entry) => {
         gameFeed.removeChild(entry);
     });
-
-
-
-   
-
 }
 
+function takeEventListenersOut(){
+
+    let buttons = querySelector.querySelectorAll('.PlayButton');
+    buttons.forEach((button) => {
+        button.removeEventListener('click', );
+    })
+}
+
+function buildEventListeners(e){
+    let clickedButton = e.currentTarget;
+       switch (clickedButton.id) {
+        case "Rock":
+            update(playRound("Rock"));
+            break;
+        case "Paper":
+            update(playRound("Paper"));
+            break;
+        case "Scissors":
+            update(playRound("Scissors"));
+            break;
+       }
+}
 
 //TODO: as soon as a victory emerges, take out the eventlisteners
 //should the reset button be pressed, reset the game
