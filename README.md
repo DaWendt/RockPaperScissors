@@ -10,5 +10,3 @@ It will randomly return either 'Rock', 'Paper' or 'Scissors'.
 3) the game must be controlled by a function called game(). It will play a five-round game by calling 'playRound' five times.
 
 4) the results of each round must be displayed using console.log
-
-test
