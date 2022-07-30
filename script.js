@@ -86,11 +86,11 @@ function update(roundResult){
 
     if(Number(playerScore.textContent) == 5){
 
-        createGameFeedMessage("Player wins!");
+        createGameFeedMessage("Player wins! To play a new game please reset");
 
     }else if(Number(computerScore.textContent) == 5){
 
-        createGameFeedMessage("Computer wins!");
+        createGameFeedMessage("Computer wins! To play a new game please reset");
     }
 
 }
@@ -109,6 +109,15 @@ function createGameFeedMessage(message){
 function resetGame(){
 
     let entries = document.querySelectorAll('.removable');
+    let gameFeed = document.querySelector('.gameFeed');
+
+    //remove all entries in the gameFeed
+    entries.forEach((entry) => {
+        gameFeed.removeChild(entry);
+    });
+
+
+
    
 
 }
