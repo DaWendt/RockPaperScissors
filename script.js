@@ -1,6 +1,5 @@
 //set up eventlisteners for all buttons
 let buttons = document.querySelectorAll("button.PlayButton");
-console.log(buttons);
 buttons.forEach((button) => {
 
     button.addEventListener("click", (e) => {
@@ -95,11 +94,12 @@ function update(roundResult){
     }
 
 }
-
+//all entries will be marked with the class removable, so they may be removed when the game resets or concludes
 function createGameFeedMessage(message){
 
     let gamefeed = document.querySelector('.gameFeed');
     let gameFeedEntry = document.createElement('p');
+    gameFeedEntry.classList.add('removable')
     gameFeedEntry.textContent = message;
 
     gamefeed.appendChild(gameFeedEntry);
@@ -107,6 +107,9 @@ function createGameFeedMessage(message){
 }
 
 function resetGame(){
+
+    let entries = document.querySelectorAll('.removable');
+   
 
 }
 
