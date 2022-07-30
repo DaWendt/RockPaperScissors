@@ -112,6 +112,16 @@ function update(roundResult){
 
 }
 
+function createGameFeedMessage(message){
+
+    let gamefeed = document.querySelector('.gameFeed');
+    let gameFeedEntry = document.createElement('p');
+    gameFeedEntry.textContent = message;
+
+    gamefeed.appendChild(gameFeedEntry);
+    gamefeed.scrollTo(0, gamefeed.scrollHeight);
+}
+
 
 
 //TODO: refactor gamefeed update into a function
