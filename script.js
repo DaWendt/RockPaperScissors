@@ -91,10 +91,29 @@ function update(roundResult){
 
     }
 
+    if(Number(playerScore.textContent) == 5){
+
+        let gameFeedEntry = document.createElement('p');
+        gameFeedEntry.textContent = "Player wins!";
+
+        gamefeed.appendChild(gameFeedEntry);
+        gamefeed.scrollTo(0, gamefeed.scrollHeight);
+
+
+    }else if(Number(computerScore.textContent) == 5){
+
+        let gameFeedEntry = document.createElement('p');
+        gameFeedEntry.textContent = "Computer wins!";
+
+        gamefeed.appendChild(gameFeedEntry);
+        gamefeed.scrollTo(0, gamefeed.scrollHeight);
+
+    }
+
 }
 
 
 
-//update the score 
-//write a message to the gamefeed
+//TODO: refactor gamefeed update into a function
+//TODO: as soon as a victory emerges, take out the eventlisteners
 //should the reset button be pressed, reset the game
