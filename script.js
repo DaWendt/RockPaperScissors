@@ -119,7 +119,6 @@ function resetGame(){
 function takeEventListenersOut(){
 
     let buttons = document.querySelectorAll('.PlayButton');
-    console.log(buttons);
     buttons.forEach((button) => {
         button.removeEventListener('click', buildHandlingLogic);
     })
@@ -150,5 +149,4 @@ function resetScoreBoard(){
 
 }
 
-//TODO: as soon as a victory emerges, take out the eventlisteners
-//should the reset button be pressed, reset the game
+//TODO refactor the building of the eventListeners
