@@ -104,6 +104,16 @@ function resetGame(){
     entries.forEach((entry) => {
         gameFeed.removeChild(entry);
     });
+
+    //reinitiate the eventlisteners
+    let buttons = document.querySelectorAll(".PlayButton");
+    buttons.forEach((button) => {
+
+    button.addEventListener("click", buildHandlingLogic);
+    });
+
+    //reset the scoreboard
+    resetScoreBoard();
 }
 
 function takeEventListenersOut(){
@@ -128,6 +138,16 @@ function buildHandlingLogic(e){
             update(playRound("Scissors"));
             break;
        }
+}
+
+function resetScoreBoard(){
+
+    let playerScore = document.querySelector('.player');
+    let computerScore = document.querySelector('.computer');
+
+    playerScore.textContent = 0;
+    computerScore.textContent = 0;
+
 }
 
 //TODO: as soon as a victory emerges, take out the eventlisteners
