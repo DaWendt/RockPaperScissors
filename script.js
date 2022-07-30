@@ -20,8 +20,24 @@ buttons.forEach((button) => {
 });
 
 //as soon as a button is fired, let the computer generate a corresponding move
-function playRound(userInput){
+function playRound(userInput, computerInput = generateComputerInput()){
+//evaluate a winner
+    if(computerInput == userInput){
+        return {winner: "Tie",
+                winningMove: computerInput};
+    } 
+    
+    if(computerInput == "Rock" && userInput == "Scissors" ||
+       computerInput == "Scissors" && userInput == "Paper" ||
+       computerInput == "Paper" && userInput == "Rock"){
 
+        return {winner: "Computer",
+                winningMove: computerInput};
+    } else {
+
+        return {winner: "Player",
+                winningMove: userInput};
+    }
 }
 
 function generateComputerInput(){
@@ -41,7 +57,7 @@ function generateComputerInput(){
 }
 
 
-//evaluate a winner
+
 //update the score 
 //write a message to the gamefeed
 //should the reset button be pressed, reset the game
