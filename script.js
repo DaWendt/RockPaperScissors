@@ -70,10 +70,24 @@ function update(roundResult){
         gameFeedEntry.textContent = "Player wins with " + roundResult.winningMove;
 
         gamefeed.appendChild(gameFeedEntry);
-        
+        gamefeed.scrollTo(0, gamefeed.scrollHeight);
+
     } else if(roundResult.winner == "Computer"){
         computerScore.textContent = Number(computerScore.textContent) + 1;
+
+        let gameFeedEntry = document.createElement('p');
+        gameFeedEntry.textContent = "Computer wins with " + roundResult.winningMove;
+
+        gamefeed.appendChild(gameFeedEntry);
+        gamefeed.scrollTo(0, gamefeed.scrollHeight);
+
     } else{
+
+        let gameFeedEntry = document.createElement('p');
+        gameFeedEntry.textContent = "Tie achieved with: " + roundResult.winningMove;
+
+        gamefeed.appendChild(gameFeedEntry);
+        gamefeed.scrollTo(0, gamefeed.scrollHeight);
 
     }
 
