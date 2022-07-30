@@ -150,3 +150,4 @@ function resetScoreBoard(){
 }
 
 //TODO refactor the building of the eventListeners
+//TODO fix "twitching of scoreboard"
